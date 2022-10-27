@@ -1,38 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 32px;
+  padding-bottom: 32px;
+  height: calc(100% - 32px);
+}
+
+header {
+  align-items: baseline;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+.EmojiGroup span:not(:last-child) {
+  margin-right: 16px;
+}
+
+main {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+footer {
+  display: flex;
+  margin: 0 -32px;
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.Line {
+  background-color: lightpink;
+  height: 2px;
+  width: 100%;
+}
+
+.Dots {
+  width: calc(100% - 32px);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin-left: 32px;
+  position: absolute;
+}
+
+.Dot {
+  position: relative;
+  background-color: black;
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  top: -2px;
+}
+
+.CurrentDot {
+  background-color: pink;
+  width: 12px;
+  height: 12px;
+  top: -5px;
+}
+
+.heart {
   align-items: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.heart span:not(:last-child) {
+  margin-right: 64px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CurrentDot .DotContent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  font-size: 32px;
+  left: -28px;
+}
+
+.Dot:nth-child(7),
+.Dot:nth-child(8),
+.Dot:nth-child(9) {
+  visibility: hidden;
+}
+
+.DotContent {
+  position: absolute;
+  left: -2px;
+  text-align: center;
+  margin-top: 12px;
 }
